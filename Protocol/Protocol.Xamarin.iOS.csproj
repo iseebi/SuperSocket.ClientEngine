@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31AB87D7-5731-4EA9-9B45-F15F407A76E6}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SuperSocket.ClientEngine.Protocol</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>SuperSocket.ClientEngine.Protocol</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ArraySegmentEx.cs" />
+    <Compile Include="ArraySegmentList.cs" />
+    <Compile Include="AssemblyUtil.cs" />
+    <Compile Include="BinaryCommandInfo.cs" />
+    <Compile Include="CommandInfo.cs" />
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="IClientCommandReader.cs" />
+    <Compile Include="ICommand.cs" />
+    <Compile Include="ICommandInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.MonoTouch.cs" />
+    <Compile Include="StringCommandInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.Xamarin.iOS.csproj">
+      <Project>{7B29D7AE-D8C6-46B2-BFF9-CE1B88E10355}</Project>
+      <Name>Common.Xamarin.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.Xamarin.iOS.csproj">
+      <Project>{9A11BF63-8F81-481C-92C6-16B61250DACB}</Project>
+      <Name>Core.Xamarin.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
